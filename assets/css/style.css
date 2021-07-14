@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* header */
+
+header {
+    background-color: cadetblue;
+    letter-spacing: 2px;
+    width: 100%;
+    height: 80px;
+}
