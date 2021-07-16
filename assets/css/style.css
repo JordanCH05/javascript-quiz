@@ -4,7 +4,11 @@
     margin: 0;
     padding: 0;
     border: none;
+}
+
+body {
     font-family: Barlow, sans-serif;
+    color: #3a3a3a;
 }
 
 /* header & logo */
@@ -18,8 +22,14 @@ header {
 
 #logo {
     float: left;
+    color: #021559;
+    font-size: 250%;
+}
+
+h1, h2 {
+    text-transform: capitalize;
     font-family: Prompt, sans-serif;
-    padding: 
+    font-weight: 700;
 }
 
 nav {
