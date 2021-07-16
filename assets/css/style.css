@@ -51,7 +51,7 @@ nav {
     display: inline-block;
     margin-right: 20px;
     text-decoration: none;
-    color: inherit;
+    color: #021559;
 }
 
 .main-menu li a:hover {
@@ -68,6 +68,18 @@ nav .drop-menu {
 
 .main-menu, #logo {
     line-height: 60px;
+}
+
+/* introduction */
+
+#intro {
+    background-color: lightcyan;
+    text-align: center;
+    height: 120px;
+    width: 300px;
+    margin: 10px auto;
+    padding: 5px 10px;
+    border-radius: 17px;
 }
 
 /* quiz-links-area */
