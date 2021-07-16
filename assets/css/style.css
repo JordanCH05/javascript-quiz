@@ -77,15 +77,34 @@ nav .drop-menu {
     text-align: center;
     height: 120px;
     width: 300px;
-    margin: 10px auto;
+    margin: 20px auto 15px;
     padding: 5px 10px;
     border-radius: 17px;
 }
 
 /* quiz-links-area */
 
-
-#quiz-links-area ul li a img{
+.quiz-logo {
+    background: no-repeat center;
+    background-size: contain;
     height: 244px;
     width: 198px;
+}
+
+#html-logo {
+    background-image: url("../images/html_logo.png");
+    background-size: cover;
+}
+
+#css-logo {
+    background-image: url("../images/css_logo.png");
+}
+
+#js-logo {
+    background-image: url("../images/javascript_logo.png");
+}
+
+#python-logo {
+    background-image: url("../images/python_logo.jpg");
+    background-size: cover;
 }
