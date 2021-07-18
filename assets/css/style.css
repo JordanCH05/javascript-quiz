@@ -84,11 +84,18 @@ nav .drop-menu {
 
 /* quiz-links-area */
 
+#quiz-links-area ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
 .quiz-logo {
     background: no-repeat center;
     background-size: contain;
     height: 244px;
     width: 198px;
+    margin: 0 15px;
 }
 
 #html-logo {
