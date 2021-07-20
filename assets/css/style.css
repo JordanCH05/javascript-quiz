@@ -161,3 +161,16 @@ nav .drop-menu {
     color: red;
     padding: 10px;
 }
+
+/* scores page */
+
+#quiz-scores-area ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#quiz-scores-area ol {
+    list-style-type: upper-roman;
+    text-align: center;
+}
