@@ -115,3 +115,49 @@ nav .drop-menu {
     background-image: url("../images/python_logo.jpg");
     background-size: cover;
 }
+
+/* quiz question and answers */
+
+.qanda {
+    margin: 15px 0;
+}
+
+.question, .submit-buttons, .scores{
+    text-align: center;
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: auto auto;
+    justify-content: center;
+}
+
+.answers button {
+    margin: 5px;
+    padding: 10px 5px;
+    border-radius: 14px;
+    background-color: lightcyan;
+}
+
+
+.submit-buttons button {
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+}
+
+
+.correct-score {
+    color: green;
+    padding: 10px;
+}
+
+.incorrect-score {
+    color: red;
+    padding: 10px;
+}
