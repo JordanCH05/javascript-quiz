@@ -142,6 +142,11 @@ function displayQuestion(quizType) {
             document.getElementById(`choice_${j}`).textContent = questions[quizType][questionNum][`ans${j}`];
         }
 
+        //Removes correct class from previous question
+        for (let j = 1; j < 5; j++) {
+            document.getElementById(`choice_${j}`).classList.remove('correct');
+        }
+
         //Adds correct class to correct answer
         let correct = `choice_${questions[quizType][questionNum]['correct']}`;
         document.getElementById(correct).classList.add('correct');
