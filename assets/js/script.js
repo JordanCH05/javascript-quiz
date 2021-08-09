@@ -4,77 +4,77 @@ let questions = {
     html:
     [
         {
-            question: "",
-            ans1: "",
-            ans2: "",
-            ans3: "",
-            ans4: "",
-            correct: "",
+            question: "What Is The Purpose Of An If/Else Statement?",
+            ans1: "It executes one chunk of code if a condition is true, but a different chunk of code if the condition is false.",
+            ans2: "It runs one chunk of code if all the imports were successful, and another chunk of code if the imports were not successful.",
+            ans3: "It tells the computer which chunk of code to run if there is enough memory to handle it, and which chunk of code to run if there is not enough memory to handle it.",
+            ans4: "It tells the computer which chunk of code to run if the instructions you coded are incorrect.",
+            correct: "1",
         },
         {
-            question: "",
-            ans1: "",
-            ans2: "",
-            ans3: "",
-            ans4: "",
-            correct: "",
+            question: "HTML Question 2",
+            ans1: "Answer 1",
+            ans2: "Answer 2",
+            ans3: "Answer 3",
+            ans4: "Answer 4",
+            correct: "2",
         }
     ],
     css:
     [
         {
-            question: "",
-            ans1: "",
-            ans2: "",
-            ans3: "",
-            ans4: "",
-            correct: "",
+            question: "CSS Question 1",
+            ans1: "Answer 1",
+            ans2: "Answer 2",
+            ans3: "Answer 3",
+            ans4: "Answer 4",
+            correct: "1",
         },
         {
-            question: "",
-            ans1: "",
-            ans2: "",
-            ans3: "",
-            ans4: "",
-            correct: "",
+            question: "CSS Question 2",
+            ans1: "Answer 1",
+            ans2: "Answer 2",
+            ans3: "Answer 3",
+            ans4: "Answer 4",
+            correct: "2",
         }
     ],
     javascript:
     [
         {
-            question: "",
-            ans1: "",
-            ans2: "",
-            ans3: "",
-            ans4: "",
-            correct: "",
+            question: "JavaScript Question 1",
+            ans1: "Answer 1",
+            ans2: "Answer 2",
+            ans3: "Answer 3",
+            ans4: "Answer 4",
+            correct: "1",
         },
         {
-            question: "",
-            ans1: "",
-            ans2: "",
-            ans3: "",
-            ans4: "",
-            correct: "",
+            question: "JavaScript Question 2",
+            ans1: "Answer 1",
+            ans2: "Answer 2",
+            ans3: "Answer 3",
+            ans4: "Answer 4",
+            correct: "2",
         }
     ],
     python:
     [
         {
-            question: "",
-            ans1: "",
-            ans2: "",
-            ans3: "",
-            ans4: "",
-            correct: "",
+            question: "Python Question",
+            ans1: "Answer 1",
+            ans2: "Answer 2",
+            ans3: "Answer 3",
+            ans4: "Answer 4",
+            correct: "1",
         },
         {
-            question: "",
-            ans1: "",
-            ans2: "",
-            ans3: "",
-            ans4: "",
-            correct: "",
+            question: "Python Question 2",
+            ans1: "Answer 1",
+            ans2: "Answer 2",
+            ans3: "Answer 3",
+            ans4: "Answer 4",
+            correct: "2",
         }
     ]
 }
@@ -99,17 +99,29 @@ document.addEventListener("DOMContentLoaded", function() {
 /**
 * Increments correct score if correct or incorrect score if wrong
 */
-function checkAnswer(ans) {}
+function checkAnswer(ans) {
+    if (ans.className === 'correct') {
+      incrementScore();
+    } else {
+      incrementWrongAnswer();
+    }
+}
 
 /**
 * Gets the current score from the DOM and increments it by 1
 */
-function incrementScore() {}
+function incrementScore() {
+    let oldScore = parseInt(document.getElementById("count-correct").innerText);
+    document.getElementById("count-correct").innerText = ++oldScore;
+}
 
 /**
 * Gets the current incorrect score from the DOM and increments it by 1
 */
-function incrementWrongAnswer() {}
+function incrementWrongAnswer() {
+    let oldScore = parseInt(document.getElementById("count-incorrect").innerText);
+    document.getElementById("count-incorrect").innerText = ++oldScore;
+}
 
 /**
 * Displays a new question based on the quiz type
