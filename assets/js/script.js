@@ -88,10 +88,35 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             let quizType = this.getAttribute("data-type");
             if (this.getAttribute("data-type").startsWith("answer")) {
-                checkAnswer();
+                checkAnswer(this);
             } else {
                 displayQuestion(quizType);
             }
         })
     }
 })
+
+/**
+* Increments correct score if correct or incorrect score if wrong
+*/
+function checkAnswer(ans) {}
+
+/**
+* Gets the current score from the DOM and increments it by 1
+*/
+function incrementScore() {}
+
+/**
+* Gets the current incorrect score from the DOM and increments it by 1
+*/
+function incrementWrongAnswer() {}
+
+/**
+* Displays a new question based on the quiz type
+*/
+function displayQuestion(quizType) {}
+
+/**
+* Changes data-type from quizType to answer and vice versa
+*/
+function changeDataType(quizType) {}
