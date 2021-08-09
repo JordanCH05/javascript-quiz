@@ -78,3 +78,20 @@ let questions = {
         }
     ]
 }
+
+
+//add event listeners to all buttons
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+
+    for(let button of buttons){
+        button.addEventListener("click", function() {
+            let quizType = this.getAttribute("data-type");
+            if (this.getAttribute("data-type").startsWith("answer")) {
+                checkAnswer();
+            } else {
+                displayQuestion(quizType);
+            }
+        })
+    }
+})
