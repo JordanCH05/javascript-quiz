@@ -81,6 +81,11 @@ let questions = {
 
 let oldQuizType;
 
+//counting length of questions for counter
+var htmlLength = questions['html'].length
+var cssLength = questions['css'].length
+var javascriptLength = questions['javascript'].length
+var pythonLength = questions['python'].length
 
 //add event listeners to all buttons
 document.addEventListener("DOMContentLoaded", function() {
@@ -132,7 +137,9 @@ function incrementWrongAnswer() {
 * Displays a new question based on the quiz type
 */
 function displayQuestion(quizType) {
+
     if (quizType === "html" || quizType === "css" || quizType === "javascript" || quizType === "python") {
+
         // Creates a random number to select a question
         let questionNum = Math.floor(Math.random()*questions[quizType].length);
 
@@ -141,6 +148,13 @@ function displayQuestion(quizType) {
         for (let j = 1; j < 5; j++) {
             document.getElementById(`choice_${j}`).textContent = questions[quizType][questionNum][`ans${j}`];
         }
+
+        //Changes counter based on how many questions left
+        let quizLength = window[quizType + 'Length'];
+
+        let counter = quizLength - questions[quizType].length + 1;
+
+        document.getElementById('counter').innerHTML = `Question <span id="count">${counter}</span> of ${quizLength}`;
 
         //Removes correct class from previous question
         for (let j = 1; j < 5; j++) {
