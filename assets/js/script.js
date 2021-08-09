@@ -114,7 +114,21 @@ function incrementWrongAnswer() {}
 /**
 * Displays a new question based on the quiz type
 */
-function displayQuestion(quizType) {}
+function displayQuestion(quizType) {
+    if (quizType === "html" || quizType === "css" || quizType === "javascript" || quizType === "python") {
+        // Creates a random number to select a question
+        let questionNum = Math.floor(Math.random()*questions[quizType].length);
+
+        //Changes question and answers based on quiz type
+        document.getElementById('question').textContent = questions[quizType][questionNum].question;
+        for (let j = 1; j < 5; j++) {
+            document.getElementById(`choice_${j}`).textContent = questions[quizType][questionNum][`ans${j}`];
+        }
+    } else {
+        alert(`Unknown quiz type: ${quizType}`);
+        throw `Unknown quiz type: ${quizType}. Aborting!`;
+    }
+}
 
 /**
 * Changes data-type from quizType to answer and vice versa
