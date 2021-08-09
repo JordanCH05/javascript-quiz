@@ -118,11 +118,11 @@ nav .drop-menu {
 
 /* quiz question and answers */
 
-.qanda {
+#qanda {
     margin: 15px 0;
 }
 
-.question, .submit-buttons, .scores{
+#question, #counter, .scores{
     text-align: center;
 }
 
