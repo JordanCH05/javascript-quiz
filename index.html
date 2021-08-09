@@ -31,20 +31,24 @@
             </ul>
         </nav>
     </header>
-    <div id="intro">
-        <h2>Test your skills</h2>
-        <p>
-            Try out one of our four software quizzes to test out your knowledge on HTML, CSS, JavaScript and Python!
-        </p>
-    </div>
-    <div id="quiz-links-area">
-        <ul>
-            <li><a href="htmlquiz.html"><div id="html-logo" class="quiz-logo"></div></a></li>
-            <li><a href="#"><div id="css-logo" class="quiz-logo"></div></a></li>
-            <li><a href="#"><div id="js-logo" class="quiz-logo"></div></a></li>
-            <li><a href="#"><div id="python-logo" class="quiz-logo"></div></a></li>
-        </ul>
-    </div>
+    <section id="qanda">
+        <div>
+          <p id="counter">Test your skills</p>
+          <h2 id="question">
+            Pick a Quiz!
+          </h2>
+        </div>
+        <div class="answers">
+          <button id="choice_1" data-type="html"><div id="html-logo" class="quiz-logo"></div></button>
+          <button id="choice_2" data-type="css"><div id="css-logo" class="quiz-logo"></div></button>
+          <button id="choice_3" data-type="javascript"><div id="js-logo" class="quiz-logo"></div></button>
+          <button id="choice_4" data-type="python"><div id="python-logo" class="quiz-logo"></div></button>
+        </div>
+        <div class="scores">
+          <h4 class="correct-score">Correct Answers: <span id="count-correct">0</span></h4>
+          <h4 class="incorrect-score">Incorrect Answers: <span id="count-incorrect">0</span></h4>
+        </div>
+      </section>
     <script src="https://kit.fontawesome.com/6709d9064b.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
