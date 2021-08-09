@@ -77,7 +77,9 @@ let questions = {
             correct: "2",
         }
     ]
-}
+};
+
+let oldQuizType;
 
 
 //add event listeners to all buttons
@@ -89,6 +91,9 @@ document.addEventListener("DOMContentLoaded", function() {
             let quizType = this.getAttribute("data-type");
             if (this.getAttribute("data-type").startsWith("answer")) {
                 checkAnswer(this);
+                changeDataType(quizType);
+                quizType = this.getAttribute("data-type");
+                displayQuestion(quizType);
             } else {
                 displayQuestion(quizType);
             }
@@ -136,6 +141,18 @@ function displayQuestion(quizType) {
         for (let j = 1; j < 5; j++) {
             document.getElementById(`choice_${j}`).textContent = questions[quizType][questionNum][`ans${j}`];
         }
+
+        //Adds correct class to correct answer
+        let correct = `choice_${questions[quizType][questionNum]['correct']}`;
+        document.getElementById(correct).classList.add('correct');
+
+        //Saves the quiz type before the data-type is changed to answer
+        oldQuizType = quizType;
+        changeDataType(quizType);
+
+        //Removes question so it is not reused
+        questions[quizType].splice(questionNum,1);
+
     } else {
         alert(`Unknown quiz type: ${quizType}`);
         throw `Unknown quiz type: ${quizType}. Aborting!`;
@@ -145,4 +162,14 @@ function displayQuestion(quizType) {
 /**
 * Changes data-type from quizType to answer and vice versa
 */
-function changeDataType(quizType) {}
+function changeDataType(quizType) {
+    if (quizType === "html" || quizType === "css" || quizType === "javascript" || quizType === "python") {
+      for (let j = 1; j < 5; j++) {
+        document.getElementById(`choice_${j}`).dataset['type'] = `answer_${j}`;
+      }
+    } else {
+      for (let j = 1; j < 5; j++) {
+        document.getElementById(`choice_${j}`).dataset['type'] = oldQuizType;
+      }
+    }
+}
