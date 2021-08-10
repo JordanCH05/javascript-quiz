@@ -42,12 +42,12 @@ let questions = {
     javascript:
     [
         {
-            question: "JavaScript Question 1",
-            ans1: "Answer 1",
-            ans2: "Answer 2",
-            ans3: "Answer 3",
-            ans4: "Answer 4",
-            correct: "1",
+            question: 'Which statement references the DOM node created by this code? &lt;p class="pull"&gt;lorem ipsum&lt;/p&gt;</p>',
+            ans1: "document.querySelector('#pull')",
+            ans2: "document.querySelector('pull')",
+            ans3: "document.querySelector('class.pull')",
+            ans4: "document.querySelector('.pull')",
+            correct: "4",
         },
         {
             question: "JavaScript Question 2",
@@ -61,20 +61,60 @@ let questions = {
     python:
     [
         {
-            question: "Python Question",
-            ans1: "Answer 1",
-            ans2: "Answer 2",
-            ans3: "Answer 3",
-            ans4: "Answer 4",
+            question: "In Python 3, the maximum value for an integer is:",
+            ans1: "2<sup>63</sup> - 1",
+            ans2: "3 x 10<sup>8</sup>",
+            ans3: "10<sup>10<sup>100</sup></sup>",
+            ans4: "There is no limit",
+            correct: "4",
+        },
+        {
+            question: "How would you express the hexadecimal value a5 as a base-16 integer constant in Python?",
+            ans1: "0x(a5)",
+            ans2: "0xa5",
+            ans3: "hex(a5)",
+            ans4: "int('a5', 16)",
+            correct: "2",
+        },
+        {
+            question: "How would you express the constant floating-point value 3.2 × 10<sup>-12</sup> in Python:",
+            ans1: "3.2*10^(-12)",
+            ans2: "3.2 x 10 sup(-12)",
+            ans3: "3.2e-12",
+            ans4: "0.0000000000032",
+            correct: "3",
+        },
+        {
+            question: "Which of the following are valid ways to specify the string literal foo'bar in Python:",
+            ans1: "'foo'bar'",
+            ans2: `"foo'bar"`,
+            ans3: "foo\\'bar",
+            ans4: "'foo' 'bar'",
+            correct: "2",
+        },
+        {
+            question: "Which are the correct expressions for ASCII new tab and new line?",
+            ans1: "\\t and \\n",
+            ans2: "\/t and \/n",
+            ans3: "t\\ and n\\",
+            ans4: "t\/ and n\/ ",
             correct: "1",
         },
         {
-            question: "Python Question 2",
-            ans1: "Answer 1",
-            ans2: "Answer 2",
-            ans3: "Answer 3",
-            ans4: "Answer 4",
+            question: "What is the correct output of print(r'foo\\bar\nbaz')",
+            ans1: "foo\\\\barnbaz",
+            ans2: "foo\\\\bar\\nbaz",
+            ans3: "foo\\bar\\nbaz",
+            ans4: `foo\\bar<br>baz`,
             correct: "2",
+        },
+        {
+            question: "Which of the following is not a Python built-in function:",
+            ans1: "repr()",
+            ans2: "map()",
+            ans3: "round()",
+            ans4: "diff()",
+            correct: "4",
         }
     ]
 };
@@ -201,9 +241,9 @@ function displayQuestion(quizType) {
             let questionNum = Math.floor(Math.random()*questions[quizType].length);
     
             //Changes question and answers based on quiz type
-            document.getElementById('question').textContent = questions[quizType][questionNum].question;
+            document.getElementById('question').innerHTML = questions[quizType][questionNum].question;
             for (let j = 1; j < 5; j++) {
-                document.getElementById(`choice_${j}`).textContent = questions[quizType][questionNum][`ans${j}`];
+                document.getElementById(`choice_${j}`).innerHTML = questions[quizType][questionNum][`ans${j}`];
             }
     
             //Changes counter based on how many questions left
