@@ -80,6 +80,7 @@ let questions = {
 };
 
 let oldQuizType;
+let score = document.getElementById("count-correct");
 
 //counting length of questions for counter
 var htmlLength = questions['html'].length
@@ -116,10 +117,12 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 })
 
+document.getElementById('final-score').innerText = localStorage.getItem('finalScore');
 /**
  * Saves score to scoreboard
  */
  function saveScore() {
+    document.getElementById('final-score').innerText = localStorage.getItem('finalScore');
     throw `save score`
 }
 
@@ -139,7 +142,7 @@ function checkAnswer(ans) {
 */
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("count-correct").innerText);
-    document.getElementById("count-correct").innerText = ++oldScore;
+    score.innerText = ++oldScore;
 }
 
 /**
@@ -195,7 +198,9 @@ function displayQuestion(quizType) {
             throw `Unknown quiz type: ${quizType}. Aborting!`;
         } 
     }  else {
-        throw `Finished ${quizType} quiz`
+        localStorage.setItem('qType', quizType)
+        localStorage.setItem('finalScore', score.innerText);
+        return window.location.assign("final-score.html");
     }
 }
 
