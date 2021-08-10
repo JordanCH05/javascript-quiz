@@ -92,19 +92,36 @@ document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
     for(let button of buttons){
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
             let quizType = this.getAttribute("data-type");
             if (this.getAttribute("data-type").startsWith("answer")) {
                 checkAnswer(this);
                 changeDataType(quizType);
                 quizType = this.getAttribute("data-type");
                 displayQuestion(quizType);
+            } else if (this.getAttribute("data-type") === "saveScore") {
+                saveScore();
             } else {
                 displayQuestion(quizType);
             }
         })
     }
+
+    let username = document.getElementById("username");
+    let saveButton = document.getElementById("save-score");
+
+    username.addEventListener("keyup", function() {
+        saveButton.disabled = !username.value;
+    })
 })
+
+/**
+ * Saves score to scoreboard
+ */
+ function saveScore() {
+    throw `save score`
+}
 
 /**
 * Increments correct score if correct or incorrect score if wrong

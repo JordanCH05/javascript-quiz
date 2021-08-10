@@ -140,12 +140,6 @@ nav .drop-menu {
     background-color: lightcyan;
 }
 
-
-.submit-buttons button {
-    padding: 10px;
-    border-radius: 15px;
-}
-
 .scores {
     display: flex;
     justify-content: center;
