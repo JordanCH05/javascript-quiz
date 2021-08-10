@@ -109,21 +109,37 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
-    let username = document.getElementById("username");
-    let saveButton = document.getElementById("save-score");
+    if (window.location.pathname === "/final-score.html") {
+        let username = document.getElementById("username");
+        let saveButton = document.getElementById("save-score");
 
-    username.addEventListener("keyup", function() {
-        saveButton.disabled = !username.value;
-    })
+        username.addEventListener("keyup", function() {
+            saveButton.disabled = !username.value;
+        })
+        
+        const fScore = document.getElementById('final-score');
+        fScore.innerText = localStorage.getItem('finalScore');
+    }
+    
 })
 
-document.getElementById('final-score').innerText = localStorage.getItem('finalScore');
+
 /**
  * Saves score to scoreboard
  */
- function saveScore() {
-    document.getElementById('final-score').innerText = localStorage.getItem('finalScore');
-    throw `save score`
+ function saveScore() { 
+    localStorage.setItem("highScores", JSON.stringify([]));
+    const highScores = JSON.parse(localStorage.getItem("highScores"));
+    const qType = localStorage.getItem("qType");
+    const fScore = localStorage.getItem('finalScore');
+    const score = {
+        name: username.value,
+        score: fScore,
+        quiz: qType
+    };
+    highScores.push(score);
+    localStorage.setItem("highScores", JSON.stringify(highScores))
+    return window.location.assign("high-scores.html");
 }
 
 /**
