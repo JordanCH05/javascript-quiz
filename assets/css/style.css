@@ -156,7 +156,7 @@ nav .drop-menu {
     padding: 10px;
 }
 
-/* scores page */
+/* final score page */
 
 #quiz-scores-area ul{
     display: flex;
@@ -167,4 +167,24 @@ nav .drop-menu {
 #quiz-scores-area ol {
     list-style-type: upper-roman;
     text-align: center;
+}
+
+/* high scores page */
+
+#high-scores-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#high-scores-area div {
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#high-scores-area ol {
+    width: 20%;
+    margin: 0 auto;
 }

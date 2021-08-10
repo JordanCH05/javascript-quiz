@@ -102,7 +102,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 quizType = this.getAttribute("data-type");
                 displayQuestion(quizType);
             } else if (this.getAttribute("data-type") === "saveScore") {
-                saveScore();
+                const qType = localStorage.getItem("qType");
+                saveScore(qType);
             } else {
                 displayQuestion(quizType);
             }
@@ -119,7 +120,24 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const fScore = document.getElementById('final-score');
         fScore.innerText = localStorage.getItem('finalScore');
+         
+        //localStorage.setItem("highScores", JSON.stringify([]));
     }
+    
+    if (window.location.pathname === "/high-scores.html") {
+        let quizTypes = ["html", "css", "javascript", "python"];
+        for (quizType of quizTypes) {
+            let highScores = JSON.parse(localStorage.getItem(`${quizType}HighScores`));
+            let highScoreList = document.getElementById(`${quizType}-scores-area`);
+            for(i = 0; i < highScores.length; i++) {
+                let li = document.createElement("li");
+                li.innerText = `${highScores[i].name} ${highScores[i].score}`;
+                highScoreList.appendChild(li);
+            }
+        }
+        
+    }
+    
     
 })
 
@@ -127,10 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
 /**
  * Saves score to scoreboard
  */
- function saveScore() { 
-    localStorage.setItem("highScores", JSON.stringify([]));
-    const highScores = JSON.parse(localStorage.getItem("highScores"));
-    const qType = localStorage.getItem("qType");
+ function saveScore(qType) {
+    const highScores = JSON.parse(localStorage.getItem(`${qType}HighScores`));
     const fScore = localStorage.getItem('finalScore');
     const score = {
         name: username.value,
@@ -138,7 +154,11 @@ document.addEventListener("DOMContentLoaded", function() {
         quiz: qType
     };
     highScores.push(score);
-    localStorage.setItem("highScores", JSON.stringify(highScores))
+    highScores.sort((a, b) => {return b.score - a.score;});
+    while (highScores.length > 5) {
+        highScores.pop();
+    }
+    localStorage.setItem(`${qType}HighScores`, JSON.stringify(highScores))
     return window.location.assign("high-scores.html");
 }
 
@@ -158,7 +178,7 @@ function checkAnswer(ans) {
 */
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("count-correct").innerText);
-    score.innerText = ++oldScore;
+    score.innerText = oldScore + 10;
 }
 
 /**
@@ -214,7 +234,10 @@ function displayQuestion(quizType) {
             throw `Unknown quiz type: ${quizType}. Aborting!`;
         } 
     }  else {
-        localStorage.setItem('qType', quizType)
+        if (localStorage.getItem(`${quizType}HighScores`) === null) {
+            localStorage.setItem(`${quizType}HighScores`,JSON.stringify([]));
+        }
+        localStorage.setItem('qType', quizType);
         localStorage.setItem('finalScore', score.innerText);
         return window.location.assign("final-score.html");
     }
