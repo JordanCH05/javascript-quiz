@@ -138,43 +138,47 @@ function incrementWrongAnswer() {
 */
 function displayQuestion(quizType) {
 
-    if (quizType === "html" || quizType === "css" || quizType === "javascript" || quizType === "python") {
+    if (questions[quizType].length > 0){
+        if (quizType === "html" || quizType === "css" || quizType === "javascript" || quizType === "python") {
 
-        // Creates a random number to select a question
-        let questionNum = Math.floor(Math.random()*questions[quizType].length);
-
-        //Changes question and answers based on quiz type
-        document.getElementById('question').textContent = questions[quizType][questionNum].question;
-        for (let j = 1; j < 5; j++) {
-            document.getElementById(`choice_${j}`).textContent = questions[quizType][questionNum][`ans${j}`];
-        }
-
-        //Changes counter based on how many questions left
-        let quizLength = window[quizType + 'Length'];
-
-        let counter = quizLength - questions[quizType].length + 1;
-
-        document.getElementById('counter').innerHTML = `Question <span id="count">${counter}</span> of ${quizLength}`;
-
-        //Removes correct class from previous question
-        for (let j = 1; j < 5; j++) {
-            document.getElementById(`choice_${j}`).classList.remove('correct');
-        }
-
-        //Adds correct class to correct answer
-        let correct = `choice_${questions[quizType][questionNum]['correct']}`;
-        document.getElementById(correct).classList.add('correct');
-
-        //Saves the quiz type before the data-type is changed to answer
-        oldQuizType = quizType;
-        changeDataType(quizType);
-
-        //Removes question so it is not reused
-        questions[quizType].splice(questionNum,1);
-
-    } else {
-        alert(`Unknown quiz type: ${quizType}`);
-        throw `Unknown quiz type: ${quizType}. Aborting!`;
+            // Creates a random number to select a question
+            let questionNum = Math.floor(Math.random()*questions[quizType].length);
+    
+            //Changes question and answers based on quiz type
+            document.getElementById('question').textContent = questions[quizType][questionNum].question;
+            for (let j = 1; j < 5; j++) {
+                document.getElementById(`choice_${j}`).textContent = questions[quizType][questionNum][`ans${j}`];
+            }
+    
+            //Changes counter based on how many questions left
+            let quizLength = window[quizType + 'Length'];
+    
+            let counter = quizLength - questions[quizType].length + 1;
+    
+            document.getElementById('counter').innerHTML = `Question <span id="count">${counter}</span> of ${quizLength}`;
+    
+            //Removes correct class from previous question
+            for (let j = 1; j < 5; j++) {
+                document.getElementById(`choice_${j}`).classList.remove('correct');
+            }
+    
+            //Adds correct class to correct answer
+            let correct = `choice_${questions[quizType][questionNum]['correct']}`;
+            document.getElementById(correct).classList.add('correct');
+    
+            //Saves the quiz type before the data-type is changed to answer
+            oldQuizType = quizType;
+            changeDataType(quizType);
+    
+            //Removes question so it is not reused
+            questions[quizType].splice(questionNum,1);
+    
+        } else {
+            alert(`Unknown quiz type: ${quizType}`);
+            throw `Unknown quiz type: ${quizType}. Aborting!`;
+        } 
+    }  else {
+        throw `Finished ${quizType} quiz`
     }
 }
 
