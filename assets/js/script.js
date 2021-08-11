@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     ;}
     //final score screen after quiz is finished
-    if (window.location.pathname === "/final-score.html") {
+    if (window.location.pathname.endsWith("final-score.html")) {
         let username = document.getElementById("username");
         let saveButton = document.getElementById("save-score");
         //disables save button until username is filled
