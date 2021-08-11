@@ -31,18 +31,12 @@ header {
     width: 70px;
     border-radius: 50%;
     margin: 2px;
-    border: 2px solid black;
+    border: 4px solid black;
 }
 
 #logo img:hover {
-    border: 3px solid black;
+    border: 5px solid black;
     margin: 1px;
-}
-
-h1, h2 {
-    text-transform: capitalize;
-    font-family: Rajdhani, sans-serif;
-    font-weight: 700;
 }
 
 /* quiz question and answers */
@@ -122,6 +116,7 @@ h1, h2 {
     text-align: center;
     width: 100%;
 }
+
 #username:-webkit-autofill {
     -webkit-box-shadow: inset 0 0 0px 9999px black;
     -webkit-text-fill-color: #FFEE44;
@@ -130,6 +125,10 @@ h1, h2 {
 #username:autofill {
     background-color: black;
     color: #FFEE44;
+}
+
+#save-score:disabled {
+    color: #3a3a3a;
 }
 
 /* high scores page */
