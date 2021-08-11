@@ -151,7 +151,7 @@ let questions = {
         {
             question: "Which of the following are valid ways to specify the string literal foo'bar in Python:",
             ans1: "'foo'bar'",
-            ans2: `"foo'bar"`,
+            ans2: '"foo\'bar"',
             ans3: "foo\\'bar",
             ans4: "'foo' 'bar'",
             correct: "2",
@@ -169,7 +169,7 @@ let questions = {
             ans1: "foo\\\\barnbaz",
             ans2: "foo\\\\bar\\nbaz",
             ans3: "foo\\bar\\nbaz",
-            ans4: `foo\\bar<br>baz`,
+            ans4: "foo\\bar<br>baz",
             correct: "2",
         },
         {
@@ -187,10 +187,10 @@ let oldQuizType;
 let score = document.getElementById("count-correct");
 
 //counting length of questions for counter
-var htmlLength = questions['html'].length
-var cssLength = questions['css'].length
-var javascriptLength = questions['javascript'].length
-var pythonLength = questions['python'].length
+var htmlLength = questions['html'].length;
+var cssLength = questions['css'].length;
+var javascriptLength = questions['javascript'].length;
+var pythonLength = questions['python'].length;
 
 //add event listeners to all buttons
 document.addEventListener("DOMContentLoaded", function() {
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 displayQuestion(quizType);
             }
         })
-    }
+    ;}
     //final score screen after quiz is finished
     if (window.location.pathname === "/final-score.html") {
         let username = document.getElementById("username");
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function() {
         //disables save button until username is filled
         username.addEventListener("keyup", function() {
             saveButton.disabled = !username.value;
-        })
+        });
         //displays final score from local storage
         const fScore = document.getElementById('final-score');
         fScore.innerText = localStorage.getItem('finalScore');
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.location.pathname === "/high-scores.html") {
         let quizTypes = ["html", "css", "javascript", "python"];
         //go through all highscore lists of each quizType
-        for (quizType of quizTypes) {
+        for (let quizType of quizTypes) {
             //put each highscore list in the correct area of the html doc
             let highScores = JSON.parse(localStorage.getItem(`${quizType}HighScores`));
             let highScoreList = document.getElementById(`${quizType}-scores-area`);
@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     
-})
+});
 
 
 /**
@@ -295,7 +295,7 @@ function checkAnswer(ans) {
 * Gets the current score from the DOM and increments it by 10
 */
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById("count-correct").innerText);
+    let oldScore = parseInt(document.getElementById("count-correct").innerText, 10);
     score.innerText = oldScore + 10;
 }
 
@@ -303,7 +303,7 @@ function incrementScore() {
 * Gets the current incorrect score from the DOM and increments it by 10
 */
 function incrementWrongAnswer() {
-    let oldScore = parseInt(document.getElementById("count-incorrect").innerText);
+    let oldScore = parseInt(document.getElementById("count-incorrect").innerText, 10);
     document.getElementById("count-incorrect").innerText = oldScore + 10;
 }
 
