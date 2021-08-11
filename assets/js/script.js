@@ -134,43 +134,51 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for(let button of buttons){
         button.addEventListener("click", function(event) {
+            //prevent form save button default
             event.preventDefault();
+            //quizType is either "html", "css", "javascript" or "python"
             let quizType = this.getAttribute("data-type");
             if (this.getAttribute("data-type").startsWith("answer")) {
+                //check answer then display new question with same quizType
                 checkAnswer(this);
                 changeDataType(quizType);
                 quizType = this.getAttribute("data-type");
                 displayQuestion(quizType);
             } else if (this.getAttribute("data-type") === "saveScore") {
+                //save quizType to local storage and save score
                 const qType = localStorage.getItem("qType");
                 saveScore(qType);
             } else {
+                //initial display question based on quiz type
                 displayQuestion(quizType);
             }
         })
     }
-
+    //final score screen after quiz is finished
     if (window.location.pathname === "/final-score.html") {
         let username = document.getElementById("username");
         let saveButton = document.getElementById("save-score");
-
+        //disables save button until username is filled
         username.addEventListener("keyup", function() {
             saveButton.disabled = !username.value;
         })
-        
+        //displays final score from local storage
         const fScore = document.getElementById('final-score');
         fScore.innerText = localStorage.getItem('finalScore');
-         
-        //localStorage.setItem("highScores", JSON.stringify([]));
     }
     
+    //highscore screen to show all highscores
     if (window.location.pathname === "/high-scores.html") {
         let quizTypes = ["html", "css", "javascript", "python"];
+        //go through all highscore lists of each quizType
         for (quizType of quizTypes) {
+            //put each highscore list in the correct area of the html doc
             let highScores = JSON.parse(localStorage.getItem(`${quizType}HighScores`));
             let highScoreList = document.getElementById(`${quizType}-scores-area`);
+            //ignore highscore lists that are null
             if (!!highScores) {
                 for(i = 0; i < highScores.length; i++) {
+                    //append list items to ordered list
                     let li = document.createElement("li");
                     li.innerText = `${highScores[i].name} ${highScores[i].score}`;
                     highScoreList.appendChild(li);
@@ -188,18 +196,22 @@ document.addEventListener("DOMContentLoaded", function() {
  * Saves score to scoreboard
  */
  function saveScore(qType) {
+    // get highscores and final score from local storage
     const highScores = JSON.parse(localStorage.getItem(`${qType}HighScores`));
     const fScore = localStorage.getItem('finalScore');
+    // get username and final score from form
     const score = {
         name: username.value,
         score: fScore,
         quiz: qType
     };
+    // add new username and final score
     highScores.push(score);
+    // sort by score in descending order
     highScores.sort((a, b) => {return b.score - a.score;});
-    while (highScores.length > 5) {
-        highScores.pop();
-    }
+    // only keep top 5 scores
+    highScores.splice(5);
+    // put highscores back into local storage and go to highscores page
     localStorage.setItem(`${qType}HighScores`, JSON.stringify(highScores))
     return window.location.assign("high-scores.html");
 }
@@ -216,7 +228,7 @@ function checkAnswer(ans) {
 }
 
 /**
-* Gets the current score from the DOM and increments it by 1
+* Gets the current score from the DOM and increments it by 10
 */
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("count-correct").innerText);
@@ -224,11 +236,11 @@ function incrementScore() {
 }
 
 /**
-* Gets the current incorrect score from the DOM and increments it by 1
+* Gets the current incorrect score from the DOM and increments it by 10
 */
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById("count-incorrect").innerText);
-    document.getElementById("count-incorrect").innerText = ++oldScore;
+    document.getElementById("count-incorrect").innerText = oldScore + 10;
 }
 
 /**
@@ -274,13 +286,17 @@ function displayQuestion(quizType) {
         } else {
             alert(`Unknown quiz type: ${quizType}`);
             throw `Unknown quiz type: ${quizType}. Aborting!`;
-        } 
+        }
+    // save score to local storage when questions are finished
     }  else {
+        //create highscore list if there is none in local storage
         if (localStorage.getItem(`${quizType}HighScores`) === null) {
             localStorage.setItem(`${quizType}HighScores`,JSON.stringify([]));
         }
+        //save quizType and final score to local storage
         localStorage.setItem('qType', quizType);
         localStorage.setItem('finalScore', score.innerText);
+        //go to final score page
         return window.location.assign("final-score.html");
     }
 }
@@ -289,10 +305,12 @@ function displayQuestion(quizType) {
 * Changes data-type from quizType to answer and vice versa
 */
 function changeDataType(quizType) {
+    //change datatype to answer_1 2 and so on
     if (quizType === "html" || quizType === "css" || quizType === "javascript" || quizType === "python") {
       for (let j = 1; j < 5; j++) {
         document.getElementById(`choice_${j}`).dataset['type'] = `answer_${j}`;
       }
+    // or change datatype to previous quiztype
     } else {
       for (let j = 1; j < 5; j++) {
         document.getElementById(`choice_${j}`).dataset['type'] = oldQuizType;
