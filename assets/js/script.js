@@ -4,20 +4,52 @@ let questions = {
     html:
     [
         {
-            question: "What Is The Purpose Of An If/Else Statement?",
-            ans1: "It executes one chunk of code if a condition is true, but a different chunk of code if the condition is false.",
-            ans2: "It runs one chunk of code if all the imports were successful, and another chunk of code if the imports were not successful.",
-            ans3: "It tells the computer which chunk of code to run if there is enough memory to handle it, and which chunk of code to run if there is not enough memory to handle it.",
-            ans4: "It tells the computer which chunk of code to run if the instructions you coded are incorrect.",
+            question: "What does HTML stand for?",
+            ans1: "Hyperlinks and Text Merkup Language",
+            ans2: "Hyper Text Markup Language",
+            ans3: "Home Tool Markup Language",
+            ans4: "Hypertext Transfer Markup Language",
+            correct: "2",
+        },
+        {
+            question: "Choose the correct HTML element for the largest heading:",
+            ans1: "&lt;heading&gt;",
+            ans2: "&lt;h1&gt;",
+            ans3: "&lt;head&gt;",
+            ans4: "&lt;h6&gt;",
+            correct: "2",
+        },
+        {
+            question: "What is the correct HTML element for inserting a line break?",
+            ans1: "&lt;break&gt;",
+            ans2: "&lt;br&gt;",
+            ans3: "&lt;lb&gt;",
+            ans4: "&lt;linebreak&gt;",
+            correct: "2",
+        },
+        {
+            question: "What is the correct HTML for adding a background color?",
+            ans1: '&lt;body bg="yellow"&gt;',
+            ans2: '&lt;body style="background-color:yellow;"&gt;',
+            ans3: '&lt;background&gt;yellow&lt;\/background&gt;',
+            ans4: '&lt;background color="yellow"&gt;',
+            correct: "2",
+        },
+        {
+            question: "What is the correct HTML for creating a hyperlink?",
+            ans1: '&lt;a href="http://www.w3schools.com"&gt;W3Schools&lt;\/a&gt;',
+            ans2: '&lt;a url="http://www.w3schools.com"&gt;W3Schools.com&lt;\/a&gt;',
+            ans3: '&lt;a name="http://www.w3schools.com"&gt;W3Schools.com&lt;\/a&gt;',
+            ans4: '&lt;&gt;',
             correct: "1",
         },
         {
-            question: "HTML Question 2",
-            ans1: "Answer 1",
-            ans2: "Answer 2",
-            ans3: "Answer 3",
-            ans4: "Answer 4",
-            correct: "2",
+            question: "How can you open a link in a new tab/browser window?",
+            ans1: '&lt;a href="url" new&gt;',
+            ans2: '&lt;a href="url" target="new"&gt;',
+            ans3: '&lt;a href="url" target="_blank"&gt;',
+            ans4: '&lt;a href="url" target="new_tab"&gt;',
+            correct: "1",
         }
     ],
     css:
@@ -42,6 +74,14 @@ let questions = {
     javascript:
     [
         {
+            question: "What Is The Purpose Of An If/Else Statement?",
+            ans1: "It executes one chunk of code if a condition is true, but a different chunk of code if the condition is false.",
+            ans2: "It runs one chunk of code if all the imports were successful, and another chunk of code if the imports were not successful.",
+            ans3: "It tells the computer which chunk of code to run if there is enough memory to handle it, and which chunk of code to run if there is not enough memory to handle it.",
+            ans4: "It tells the computer which chunk of code to run if the instructions you coded are incorrect.",
+            correct: "1",
+        },
+        {
             question: 'Which statement references the DOM node created by this code? &lt;p class="pull"&gt;lorem ipsum&lt;/p&gt;</p>',
             ans1: "document.querySelector('#pull')",
             ans2: "document.querySelector('pull')",
@@ -50,12 +90,12 @@ let questions = {
             correct: "4",
         },
         {
-            question: "JavaScript Question 2",
-            ans1: "Answer 1",
-            ans2: "Answer 2",
-            ans3: "Answer 3",
-            ans4: "Answer 4",
-            correct: "2",
+            question: "Which line would you use to specify a customised error has occured?",
+            ans1: "throw('An error has occured')",
+            ans2: "exception('An error has occured')",
+            ans3: "error('An error has occured')",
+            ans4: "catch('An error has occured')",
+            correct: "1",
         }
     ],
     python:
