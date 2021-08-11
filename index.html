@@ -9,7 +9,7 @@
     <title>Software Quiz</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <a href="index.html">
             <h1 id="logo">Software Quiz</h1>
         </a>
@@ -24,23 +24,30 @@
                 </li>
             </ul>
         </nav>
-    </header>
+    </header> -->
     <section id="qanda">
         <div>
           <p id="counter">Test your skills</p>
           <h2 id="question">
-            Software Quiz
+            Quiz Bee
           </h2>
         </div>
         <div class="answers">
-          <button id="choice_1" data-type="html">level 1 HTML</button>
-          <button id="choice_2" data-type="css">level 2 CSS</button>
-          <button id="choice_3" data-type="javascript">level 3 JavaScript</button>
-          <button id="choice_4" data-type="python">level 4 Python</button>
+          <button id="choice_1" data-type="html">
+            <span class="level">level 1</span> <span class="quiz-title">HTML</span>
+          </button>
+          <button id="choice_2" data-type="css">
+            <span class="level">level 2</span> <span class="quiz-title">CSS</span>
+            </button>
+          <button id="choice_3" data-type="javascript">
+            <span class="level">level 3</span> <span class="quiz-title">JavaScript</span>
+          </button>
+          <button id="choice_4" data-type="python">
+            <span class="level">level 4</span> <span class="quiz-title">Python</span>
+          </button>
         </div>
         <div class="scores">
-          <h4 class="correct-score">Correct Answers: <span id="count-correct">0</span></h4>
-          <h4 class="incorrect-score">Incorrect Answers: <span id="count-incorrect">0</span></h4>
+          <h4 class="correct-score">Score: <span id="count-correct">0</span></h4>
         </div>
       </section>
     <script src="https://kit.fontawesome.com/6709d9064b.js" crossorigin="anonymous"></script>

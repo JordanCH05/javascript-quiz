@@ -35,7 +35,7 @@ h1, h2 {
 }
 
 /* navigation */
-
+/* 
 nav {
     float: right;
 }
@@ -69,7 +69,7 @@ nav .drop-menu {
 
 .main-menu, #logo {
     line-height: 60px;
-}
+} */
 
 /* quiz-links-area */
 
@@ -121,10 +121,15 @@ nav .drop-menu {
     padding: 10px 5px;
     background-color: black;
     color: #FFEE44;
-    text-align: right;
 }
 
-.answers
+.level {
+    float: left;
+}
+
+.quiz-title {
+    float: right;
+}
 
 .scores {
     display: flex;
@@ -133,12 +138,7 @@ nav .drop-menu {
 
 
 .correct-score {
-    color: green;
-    padding: 10px;
-}
-
-.incorrect-score {
-    color: red;
+    color: black;
     padding: 10px;
 }
 

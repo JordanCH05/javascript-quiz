@@ -287,7 +287,7 @@ function checkAnswer(ans) {
     if (ans.className === 'correct') {
       incrementScore();
     } else {
-      incrementWrongAnswer();
+      
     }
 }
 
@@ -297,14 +297,6 @@ function checkAnswer(ans) {
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("count-correct").innerText, 10);
     score.innerText = oldScore + 10;
-}
-
-/**
-* Gets the current incorrect score from the DOM and increments it by 10
-*/
-function incrementWrongAnswer() {
-    let oldScore = parseInt(document.getElementById("count-incorrect").innerText, 10);
-    document.getElementById("count-incorrect").innerText = oldScore + 10;
 }
 
 /**
