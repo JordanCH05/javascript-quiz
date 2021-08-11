@@ -169,10 +169,12 @@ document.addEventListener("DOMContentLoaded", function() {
         for (quizType of quizTypes) {
             let highScores = JSON.parse(localStorage.getItem(`${quizType}HighScores`));
             let highScoreList = document.getElementById(`${quizType}-scores-area`);
-            for(i = 0; i < highScores.length; i++) {
-                let li = document.createElement("li");
-                li.innerText = `${highScores[i].name} ${highScores[i].score}`;
-                highScoreList.appendChild(li);
+            if (!!highScores) {
+                for(i = 0; i < highScores.length; i++) {
+                    let li = document.createElement("li");
+                    li.innerText = `${highScores[i].name} ${highScores[i].score}`;
+                    highScoreList.appendChild(li);
+                }
             }
         }
         
