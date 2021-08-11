@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     //highscore screen to show all highscores
-    if (window.location.pathname === "/high-scores.html") {
+    if (window.location.pathname.endsWith("/high-scores.html")) {
         let quizTypes = ["html", "css", "javascript", "python"];
         //go through all highscore lists of each quizType
         for (let quizType of quizTypes) {
