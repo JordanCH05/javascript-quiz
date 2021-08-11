@@ -366,6 +366,7 @@ function changeDataType(quizType) {
       for (let j = 1; j < 5; j++) {
         document.getElementById(`choice_${j}`).dataset['type'] = `answer_${j}`;
       }
+      document.querySelector('.correct-score').style.setProperty('display', 'initial')
     // or change datatype to previous quiztype
     } else {
       for (let j = 1; j < 5; j++) {
