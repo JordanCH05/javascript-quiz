@@ -13,13 +13,15 @@ image of mockup of site
     * Simple bee themed colourscheme chosen
     * Contrasting black and yellow colours for easy legibility and style
 
-image of colour scheme
+![Colourscheme](assets/images/colours.PNG)
 
 * Font
     * Font taken from [Google Fonts](https://fonts.google.com/)
     * Rajdhani used for legibility
     * Good for small texts as it is without serifs
     * Q looks like a round bee with a stinger
+
+![Title](assets/images/title.PNG)
 
 * Figma
     * Pages were planned out on [Figma](https://www.figma.com) using wireframes
@@ -33,14 +35,14 @@ image of wireframes
     * Used as link to return to the home page
     * Logo uses same colour scheme as the rest of the site with an off yellow for the bee's body so it can still be seen
 
-image of logo
+![Logo](assets/images/logo.PNG)
 
 * Home Page
 
     * Has website title
     * Four buttons to choose which quiz to take
 
-image of home page
+![Home Page](assets/images/home.PNG)
 
 * Question and Answers
 
@@ -49,21 +51,21 @@ image of home page
     * Four multiple choice answer buttons which invert colours when hovered 
     * Updating score display to show how many correct answers have been chosen
 
-image of questions and answers
+![Questions and answers page](assets/images/question.PNG)
 
 * Final Score page
 
     * Final Score displayed at the end of the quiz
     * Username can be entered to save the final score and add to the highscores list
 
-image of final score page
+![Final Score page](assets/images/final-score.PNG)
 
 * Highscores page
 
     * Large headings for each highscore list that keep the bee theme
     * Top 5 highscores for each quiz
 
-image of highscores page
+![Highscore Lists](assets/images/highscores.PNG)
 
 ## Features left to implement
 
