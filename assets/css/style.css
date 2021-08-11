@@ -16,7 +16,7 @@ body {
 
 header {
     width: 100%;
-    height: 60px;
+    height: 100px;
     padding: 0 5px;
 }
 
@@ -24,6 +24,7 @@ header {
     float: left;
     margin-left: 70px;
     height: 75px;
+    margin-top: 10px;
 }
 
 #logo img {
@@ -69,7 +70,7 @@ h1, h2 {
     justify-content: left;
 }
 
-.answers button {
+.answers button, #final-score, #username, #save-score, .highscore-title {
     margin: 30px 5px;
     padding: 10px 5px;
     background-color: black;
@@ -78,6 +79,12 @@ h1, h2 {
     font-size: 64px;
     font-family: Rajdhani, sans-serif;
     font-weight: 700;
+}
+
+.answers button:hover {
+    background-color: #FFEE44;
+    color: black;
+    border: 5px solid black;
 }
 
 .level {
@@ -113,15 +120,16 @@ h1, h2 {
 
 #final-score, #username, #save-score {
     text-align: center;
-    margin: 30px 5px;
-    padding: 10px 5px;
+    width: 100%;
+}
+#username:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px black;
+    -webkit-text-fill-color: #FFEE44;
+}
+
+#username:autofill {
     background-color: black;
     color: #FFEE44;
-    height: 100px;
-    font-size: 64px;
-    font-family: Rajdhani, sans-serif;
-    font-weight: 700;
-    width: 100%;
 }
 
 /* high scores page */
