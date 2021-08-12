@@ -91,17 +91,34 @@ image of wireframes
 
 ### Accesssibility
 
+* Tested using a web accessibility evaluation tool called [Wave](https://wave.webaim.org/)
+* Semantic HTML is used
+* Headers are in order and not skipped (h1, h2, h3)
+
 ## Deployment
+
+* This site was deployed to GitHub pages. The steps to deploy are as follows:
+    * In the GitHub repository, navigate to the Settings tab
+    * From the source section drop-down menu, select the Master Branch
+    * Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The link to the live site can be found [here](https://jordanch05.github.io/javascript-quiz/index.html)
 
 ## Credits
 
 ### Content
 
-* questions and answers
+* The questions and answers were mainly taken from [W3Schools](https://www.w3schools.com/quiztest/default.asp)
+* Python questions and answers were taken from [Real Python](https://realpython.com/quizzes/)
+* A few questions were taken from [LinkedIn Skill Assesment Quizzes](https://www.linkedin.com/) 
 
 ### Media
 
-* logo
-* font
+* The logo was made using [Canva](canva.com)
+* The font was taken from [Google Fonts](https://fonts.google.com/)
 
 ### Other
+
+* [W3Schools](https://www.w3schools.com/) was used for reference
+* The [Code Institute](https://codeinstitute.net/) study material was used
+* Support from a [Code Institute](https://codeinstitute.net/) Tutor helped with a deployment issue
