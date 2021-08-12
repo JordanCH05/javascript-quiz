@@ -4,7 +4,7 @@ This website has been created for users who want to test their knowledge on HTML
 
 The live site can be viewed [here](https://jordanch05.github.io/javascript-quiz/index.html)
 
-image of mockup of site
+![Responsive Mockup of site](assets/images/mockup.png)
 
 ## Planning
 
@@ -26,7 +26,7 @@ image of mockup of site
 * Figma
     * Pages were planned out on [Figma](https://www.figma.com) using wireframes
 
-image of wireframes
+![Image from Figma](assets/images/wireframes.PNG)
 
 ## Features
 
@@ -122,3 +122,4 @@ The link to the live site can be found [here](https://jordanch05.github.io/javas
 * [W3Schools](https://www.w3schools.com/) was used for reference
 * The [Code Institute](https://codeinstitute.net/) study material was used
 * Support from a [Code Institute](https://codeinstitute.net/) Tutor helped with a deployment issue
+* Code from [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw) on youtube was used and adapted to help me use local storage and create highscore lists
