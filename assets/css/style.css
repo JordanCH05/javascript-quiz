@@ -118,7 +118,7 @@ header {
 }
 
 #username:-webkit-autofill {
-    box-shadow: black;
+    box-shadow: 0 0 0px 9999px black;
     -webkit-box-shadow: inset 0 0 0px 9999px black;
     -webkit-text-fill-color: #FFEE44;
 }
