@@ -83,7 +83,7 @@ image of wireframes
 
 ### JavaScript
 
-* Tested using [Web Toolkit Online](https://webtoolkitonline.com/javascript-tester.html)
+* Tested using [JSHint JavaScript Validator](https://jshint.com/)
 
 ### Browsers
 

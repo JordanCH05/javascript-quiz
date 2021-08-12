@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 //Questions and answers for quiz grouped by quiz type
 
 let questions = {
@@ -241,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let highScoreList = document.getElementById(`${quizType}-scores-area`);
             //ignore highscore lists that are null
             if (!!highScores) {
-                for(i = 0; i < highScores.length; i++) {
+                for(let i = 0; i < highScores.length; i++) {
                     //append list items to ordered list
                     let li = document.createElement("li");
                     li.innerText = `${highScores[i].name} ${highScores[i].score}`;
@@ -276,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // only keep top 5 scores
     highScores.splice(5);
     // put highscores back into local storage and go to highscores page
-    localStorage.setItem(`${qType}HighScores`, JSON.stringify(highScores))
+    localStorage.setItem(`${qType}HighScores`, JSON.stringify(highScores));
     return window.location.assign("high-scores.html");
 }
 
@@ -364,9 +365,9 @@ function changeDataType(quizType) {
     //change datatype to answer_1 2 and so on
     if (quizType === "html" || quizType === "css" || quizType === "javascript" || quizType === "python") {
       for (let j = 1; j < 5; j++) {
-        choice = document.getElementById(`choice_${j}`)
+        let choice = document.getElementById(`choice_${j}`);
         choice.dataset['type'] = `answer_${j}`;
-        choice.style.setProperty('font-size','24px')
+        choice.style.setProperty('font-size','24px');
       }
       document.querySelector('.correct-score').style.setProperty('display', 'initial');
       document.querySelector('#question').style.setProperty('font-size', '48px');
@@ -375,5 +376,5 @@ function changeDataType(quizType) {
       for (let j = 1; j < 5; j++) {
         document.getElementById(`choice_${j}`).dataset['type'] = oldQuizType;
       }
-    };
+    }
 }
