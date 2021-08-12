@@ -32,16 +32,16 @@ let questions = {
             question: "What is the correct HTML for adding a background color?",
             ans1: '&lt;body bg="yellow"&gt;',
             ans2: '&lt;body style="background-color:yellow;"&gt;',
-            ans3: '&lt;background&gt;yellow&lt;\/background&gt;',
+            ans3: '&lt;background&gt; yellow &lt;\/background&gt;',
             ans4: '&lt;background color="yellow"&gt;',
             correct: "2",
         },
         {
             question: "What is the correct HTML for creating a hyperlink?",
-            ans1: '&lt;a href="http://www.w3schools.com"&gt;W3Schools&lt;\/a&gt;',
-            ans2: '&lt;a url="http://www.w3schools.com"&gt;W3Schools.com&lt;\/a&gt;',
-            ans3: '&lt;a name="http://www.w3schools.com"&gt;W3Schools.com&lt;\/a&gt;',
-            ans4: '&lt;a web="http://www.w3schools.com"&gt;W3Schools.com&lt;\/a&gt;',
+            ans1: '&lt;a href= "http://www.w3schools.com"&gt; W3Schools &lt;\/a&gt;',
+            ans2: '&lt;a url= "http://www.w3schools.com"&gt; W3Schools.com &lt;\/a&gt;',
+            ans3: '&lt;a name= "http://www.w3schools.com"&gt; W3Schools.com &lt;\/a&gt;',
+            ans4: '&lt;a web= "http://www.w3schools.com"&gt; W3Schools.com &lt;\/a&gt;',
             correct: "1",
         },
         {
@@ -66,7 +66,7 @@ let questions = {
         {
             question: "What is the correct HTML for referring to an external style sheet?",
             ans1: '&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;',
-            ans2: '&lt;stylesheet&gt;mystyle.css&lt;\/stylesheet&gt;',
+            ans2: '&lt;stylesheet&gt; mystyle.css &lt;\/stylesheet&gt;',
             ans3: '&lt;style src="mystyle.css"&gt;',
             ans4: '&lt;a href="style.css" target="stylesheet"&gt;',
             correct: "1",
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         //displays final score from local storage
         const fScore = document.getElementById('final-score');
-        fScore.innerText = localStorage.getItem('finalScore');
+        fScore.innerText = 'Score: ' + localStorage.getItem('finalScore');
     }
     
     //highscore screen to show all highscores
@@ -312,7 +312,7 @@ function displayQuestion(quizType) {
             let questionNum = Math.floor(Math.random()*questions[quizType].length);
     
             //Changes question and answers based on quiz type
-            document.getElementById('question').innerHTML = questions[quizType][questionNum].question;
+            document.querySelector('.title').innerHTML = questions[quizType][questionNum].question;
             for (let j = 1; j < 5; j++) {
                 document.getElementById(`choice_${j}`).innerHTML = questions[quizType][questionNum][`ans${j}`];
             }
@@ -367,10 +367,9 @@ function changeDataType(quizType) {
       for (let j = 1; j < 5; j++) {
         let choice = document.getElementById(`choice_${j}`);
         choice.dataset['type'] = `answer_${j}`;
-        choice.style.setProperty('font-size','24px');
       }
       document.querySelector('.correct-score').style.setProperty('display', 'initial');
-      document.querySelector('#question').style.setProperty('font-size', '48px');
+      document.querySelector('.title').id = "question";
     // or change datatype to previous quiztype
     } else {
       for (let j = 1; j < 5; j++) {

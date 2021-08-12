@@ -45,23 +45,27 @@ header {
     margin: 15px 0;
 }
 
-#question {
+#question, #counter, .scores, .title{
+    text-align: center;
+}
+
+.title {
     font-size: 96px;
+}
+
+#question {
+    font-size: 48px;
 }
 
 #counter {
     font-size: 30px;
 }
 
-#question, #counter, .scores{
-    text-align: center;
-}
-
 .answers {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 95%;
     grid-template-rows: auto auto auto auto;
-    justify-content: left;
+    justify-content: center;
 }
 
 .answers button, #final-score, #username, #save-score, .highscore-title {
@@ -69,7 +73,7 @@ header {
     padding: 10px 5px;
     background-color: black;
     color: #FFEE44;
-    height: 100px;
+    height: auto;
     font-size: 64px;
     font-family: Rajdhani, sans-serif;
     font-weight: 700;
@@ -145,4 +149,23 @@ header {
 #high-scores-area ol {
     width: 20%;
     margin: 0 auto;
+}
+
+/* Responsive design for screens 600px width and below */
+
+@media screen and (max-width: 600px) {
+
+    .title {
+        font-size: 96px;
+    }
+
+    #question {
+        font-size: 7vw;
+    }
+
+    .answers button, #final-score, #username, #save-score, .highscore-title {
+        font-size: 6vw;
+        margin: 20px 5px;
+    }
+    
 }
