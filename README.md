@@ -79,9 +79,15 @@ image of wireframes
 
 ### CSS
 
+* Tested using the official [Jigsaw W3C Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjordanch05.github.io%2Fjavascript-quiz%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
 ### JavaScript
 
+* Tested using [Web Toolkit Online](https://webtoolkitonline.com/javascript-tester.html)
+
 ### Browsers
+
+* Tested on Google Chrome and Microsoft Edge
 
 ### Accesssibility
 

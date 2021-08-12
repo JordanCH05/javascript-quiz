@@ -368,12 +368,12 @@ function changeDataType(quizType) {
         choice.dataset['type'] = `answer_${j}`;
         choice.style.setProperty('font-size','24px')
       }
-      document.querySelector('.correct-score').style.setProperty('display', 'initial')
-      document.querySelector('#question').style.setProperty('font-size', '48px')
+      document.querySelector('.correct-score').style.setProperty('display', 'initial');
+      document.querySelector('#question').style.setProperty('font-size', '48px');
     // or change datatype to previous quiztype
     } else {
       for (let j = 1; j < 5; j++) {
         document.getElementById(`choice_${j}`).dataset['type'] = oldQuizType;
       }
-    }
+    };
 }
