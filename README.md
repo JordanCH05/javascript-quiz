@@ -75,6 +75,8 @@ image of wireframes
 
 ### HTML
 
+* Tested using the official [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjordanch05.github.io%2Fjavascript-quiz%2Findex.html)
+
 ### CSS
 
 ### JavaScript

@@ -118,13 +118,9 @@ header {
 }
 
 #username:-webkit-autofill {
+    box-shadow: black;
     -webkit-box-shadow: inset 0 0 0px 9999px black;
     -webkit-text-fill-color: #FFEE44;
-}
-
-#username:autofill {
-    background-color: black;
-    color: #FFEE44;
 }
 
 #save-score:disabled {
